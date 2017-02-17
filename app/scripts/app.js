@@ -1,12 +1,12 @@
 (function () {
-    function config($stateprovider, $locationProvider) {
+    function config($stateProvider, $locationProvider) {
         $locationProvider
             .html5Mode({
                 enabled: true,
                 requireBase: false
             });
         
-        $stateprovider
+        $stateProvider
             .state('landing', {
                 url: '/',
                 templateUrl: '/templates/landing.html'
@@ -23,7 +23,7 @@
             });
     }
     
-    angular
+    angular /* global angular */
         .module('blocJams', ['ui.router'])
         .config(config);
     
