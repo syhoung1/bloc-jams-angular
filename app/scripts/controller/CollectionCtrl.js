@@ -1,10 +1,6 @@
 (function () {
     function CollectionCtrl (Fixtures) {
-        this.albums = [];
-        for (var i = 0; i < 12; i++) {
-            /* global albumPicasso */
-            this.albums.push(Fixtures.getAlbum());
-        }
+        this.albums = Fixtures.getCollection();
     }
     
     angular /* global angular */
