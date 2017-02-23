@@ -24,16 +24,16 @@
         
         var setSong = function (song) {
             if (currentBuzzObject) {
-                    currentBuzzObject.stop();
-                    SongPlayer.currentSong.playing = null;
-                }
+                currentBuzzObject.stop();
+                SongPlayer.currentSong.playing = null;
+            }
                 
-                currentBuzzObject = new buzz.sound(song.audioUrl, {
-                    formats: ['mp3'],
-                    preload: true
-                });
+            currentBuzzObject = new buzz.sound(song.audioUrl, {
+                formats: ['mp3'],
+                preload: true
+            });
                 
-                SongPlayer.currentSong = song;
+            SongPlayer.currentSong = song;
         };
         
         /**
