@@ -24,21 +24,21 @@
         
         var setSong = function (song) {
             if (currentBuzzObject) {
-                    stopSong();
-                }
-                
-                currentBuzzObject = new buzz.sound(song.audioUrl, {
-                    formats: ['mp3'],
-                    preload: true
-                });
-                
-                currentBuzzObject.bind('timeupdate', function () {
-                   $rootScope.$apply(function () {
-                      SongPlayer.currentTime = currentBuzzObject.getTime(); 
-                   });
-                });
-                
-                SongPlayer.currentSong = song;
+                stopSong();
+            }
+
+            currentBuzzObject = new buzz.sound(song.audioUrl, {
+                formats: ['mp3'],
+                preload: true
+            });
+            
+            currentBuzzObject.bind('timeupdate', function () {
+               $rootScope.$apply(function () {
+                  SongPlayer.currentTime = currentBuzzObject.getTime(); 
+               });
+            });
+            
+            SongPlayer.currentSong = song;
         };
         
         /**
