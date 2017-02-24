@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         },
         
         eslint: {
-            target: ['.app/scripts/**/*.js']
+            target: ['./app/scripts/**/*.js']
         },
         
         clean: ['./dist']

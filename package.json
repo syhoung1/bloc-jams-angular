@@ -17,8 +17,12 @@
     "path": "^0.4.9"
   },
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
     "connect-modrewrite": "^0.7.9",
     "es5-shim": "^4.0.1",
+    "eslint": "^3.16.1",
+    "eslint-config-airbnb-es5": "^1.1.0",
+    "eslint-plugin-react": "^6.10.0",
     "grunt": "^1.0.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "~0.6.0",
