@@ -26,25 +26,18 @@
             if (currentBuzzObject) {
                 stopSong();
             }
-<<<<<<< HEAD
-
-=======
                 
->>>>>>> assignment-8
             currentBuzzObject = new buzz.sound(song.audioUrl, {
                 formats: ['mp3'],
                 preload: true
             });
             
-<<<<<<< HEAD
             currentBuzzObject.bind('timeupdate', function () {
                $rootScope.$apply(function () {
                   SongPlayer.currentTime = currentBuzzObject.getTime(); 
                });
             });
             
-=======
->>>>>>> assignment-8
             SongPlayer.currentSong = song;
         };
         
@@ -170,14 +163,9 @@
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
             currentSongIndex++;
             
-<<<<<<< HEAD
-            if (currentSongIndex > currentAlbum.songs.length) {
-                stopSong();
-=======
             if (currentSongIndex >= currentAlbum.songs.length) {
                 // SongPlayer.currentSongIndex = null;
                 SongPlayer.currentSong = null;
->>>>>>> assignment-8
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
