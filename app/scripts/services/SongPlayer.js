@@ -26,18 +26,25 @@
             if (currentBuzzObject) {
                 stopSong();
             }
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> assignment-8
             currentBuzzObject = new buzz.sound(song.audioUrl, {
                 formats: ['mp3'],
                 preload: true
             });
             
+<<<<<<< HEAD
             currentBuzzObject.bind('timeupdate', function () {
                $rootScope.$apply(function () {
                   SongPlayer.currentTime = currentBuzzObject.getTime(); 
                });
             });
             
+=======
+>>>>>>> assignment-8
             SongPlayer.currentSong = song;
         };
         
@@ -90,20 +97,28 @@
         */
         
         var stopSong = function () {
-            currentBuzzObject.stop();
-            SongPlayer.currentSong.playing = null;
+             currentBuzzObject.stop();
+             
+            if (SongPlayer.currentSong !== null) {
+                SongPlayer.currentSong.playing = false;
+            }
         };
         
         /**
         * @function play()
-        * @desc plays selected song item. Pauses previously playing song if there is one.
+        * @desc plays selected song item. Stops previously playing song if there is one.
         * @param {Object} song
         */
         
         SongPlayer.play = function (song) {
             /* global buzz */
             song = song || SongPlayer.currentSong;
-            if (song !== SongPlayer.currentSong) {
+            var firstSong = currentAlbum.songs[0];
+            
+            if (SongPlayer.currentSong === null) {
+                setSong(firstSong);
+                playSong(firstSong);
+            } else if (song !== SongPlayer.currentSong) {
                 setSong(song);
                 playSong(song);
                 
@@ -153,10 +168,16 @@
         
         SongPlayer.next = function () {
             var currentSongIndex = getSongIndex(SongPlayer.currentSong);
-            currentSongIndex ++;
+            currentSongIndex++;
             
+<<<<<<< HEAD
             if (currentSongIndex > currentAlbum.songs.length) {
                 stopSong();
+=======
+            if (currentSongIndex >= currentAlbum.songs.length) {
+                // SongPlayer.currentSongIndex = null;
+                SongPlayer.currentSong = null;
+>>>>>>> assignment-8
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
