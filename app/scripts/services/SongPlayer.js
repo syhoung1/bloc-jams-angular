@@ -37,6 +37,10 @@
                     SongPlayerObject.currentTime = currentBuzzObject.getTime();
                 });
             });
+            
+            currentBuzzObject.bind('ended', function () {
+                SongPlayerObject.next();
+            });
 
             SongPlayerObject.currentSong = song;
         };
@@ -105,6 +109,7 @@
 
         SongPlayerObject.play = function (songItem) {
             /* global buzz */
+            
             var song = songItem || SongPlayerObject.currentSong;
             var firstSong = currentAlbum.songs[0];
 
